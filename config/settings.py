@@ -59,13 +59,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -137,5 +136,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "music.User"
 
 # For Render
-if RENDER:
-    ALLOWED_HOSTS.append(env(RENDER_EXTERNAL_HOSTNAME))
+if env('RENDER'):
+    ALLOWED_HOSTS.append(env('RENDER_EXTERNAL_HOSTNAME'))
