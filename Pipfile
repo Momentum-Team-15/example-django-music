@@ -8,6 +8,8 @@ django = "*"
 django-extensions = "*"
 django-registration-redux = "*"
 psycopg2-binary = "*"
+django-environ = "*"
+whitenoise = "*"
 
 [dev-packages]
 black = "*"
